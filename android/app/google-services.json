@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "687767131851",
+    "project_id": "e-property-125a2",
+    "storage_bucket": "e-property-125a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687767131851:android:746ac49343a1165414ad4e",
+        "android_client_info": {
+          "package_name": "com.eproperty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687767131851-g0vkt9d3kb2acvji1pt1k1ecu02ou4fa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRwOIwR4aYJAuijubs_JD5OW5cA_CFp4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687767131851-g0vkt9d3kb2acvji1pt1k1ecu02ou4fa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
