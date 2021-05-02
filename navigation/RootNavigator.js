@@ -3,6 +3,7 @@ import {Text} from 'react-native';
 import {useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
+import { HeaderBackButton } from '@react-navigation/stack';
 
 import Login from '../screens/Auth/Login';
 import Signup from '../screens/Auth/Signup';
@@ -111,6 +112,8 @@ const HomeNavigator =()=>{
         <HomeStackNavigator.Screen name="Office" component={Office} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}} />
         <HomeStackNavigator.Screen name="Business" component={Business} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}} />
         <HomeStackNavigator.Screen name="Commercial" component={Commercial} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}} />
+        <HomeStackNavigator.Screen name="Property Detail" component={PropertyDetail} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}}  />
+        <PropertiesStackNavigator.Screen name="Map" component={Map} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}}  />
     </HomeStackNavigator.Navigator>
 }
 
@@ -123,7 +126,7 @@ const AddPropertyNavigator=()=>{
 const PropertiesNavigator=()=>{ 
   return  <PropertiesStackNavigator.Navigator>
         <PropertiesStackNavigator.Screen name="Properties" component={Properties} />
-        <PropertiesStackNavigator.Screen name="Property Detail" component={PropertyDetail} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}}  />
+        <PropertiesStackNavigator.Screen  name="Property Detail" component={PropertyDetail} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}}  />
         <PropertiesStackNavigator.Screen name="Map" component={Map} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}}  />
     </PropertiesStackNavigator.Navigator>
 }
