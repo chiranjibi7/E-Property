@@ -7,6 +7,7 @@ import Categories from './Categories/Categories';
 import CarouselProperties from './CarouselProperties';
 import Advertise from './Advertise';
 import {getProperty} from '../../store/action/property';
+import {getProfile} from '../../store/action/profile';
 
 
 const Home = () => {
@@ -23,8 +24,13 @@ const Home = () => {
     });
 
     useEffect(() => {
-        dispatch(getProperty());   
+        dispatch(getProperty());  
+        dispatch(getProfile());   
      }, []);
+
+    //  useEffect(() => {
+    //     dispatch(getProfile());   
+    //  }, []);
    
     return (
         <ScrollView style={styles.home} showsVerticalScrollIndicator={false}>

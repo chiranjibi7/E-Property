@@ -79,7 +79,7 @@ const AppNavigator=()=>{
 }
 
 const HomeTab=()=>{
-    return <HomeTabNavigator.Navigator tabBarOptions={{activeTintColor:'#de6262', inactiveTintColor:'#e99696'}}>
+    return <HomeTabNavigator.Navigator tabBarOptions={{activeTintColor:'#de6262', inactiveTintColor:'#e99696'}} initialRouteName="Home">
         
         <HomeTabNavigator.Screen name="Home" options={{
             tabBarIcon:({focused,color,size})=><Icon name="md-home" color={color} size={focused ? 30 : 25} />,
@@ -104,7 +104,7 @@ const HomeTab=()=>{
 }
 
 const HomeNavigator =()=>{
-    return <HomeStackNavigator.Navigator>
+    return <HomeStackNavigator.Navigator initialRouteName="Home">
         <HomeStackNavigator.Screen name="Home" component={Home} />
         <HomeStackNavigator.Screen name="House" component={House} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}} />
         <HomeStackNavigator.Screen name="Land" component={Land} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}} />
@@ -142,6 +142,7 @@ const SettingsNavigator=()=>{
     return <SettingsStackNavigator.Navigator>
         <SettingsStackNavigator.Screen name="Settings" component={Settings} />
         <SettingsStackNavigator.Screen name="Change Password" component={ChangePassword} options={{headerTitleAlign:'center', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}} />
+        <SettingsStackNavigator.Screen name="Edit Profile" component={EditProfile} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}} />
     </SettingsStackNavigator.Navigator>
 }
 

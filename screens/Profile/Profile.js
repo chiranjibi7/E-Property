@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import { StyleSheet, Text, View,Image,RefreshControl, ScrollView } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch,useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import EditIcon from 'react-native-vector-icons/FontAwesome';
 import UserIcon from 'react-native-vector-icons/FontAwesome';
@@ -11,9 +11,8 @@ import {getProfile} from '../../store/action/profile';
 
 const Profile = () => {
 
-    const userPhoto='https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png';
     const navigation= useNavigation();
-    const dispatch = useDispatch();
+    const dispatch= useDispatch();
 
     const profile= useSelector(state=>state.profile.userProfile);
 
@@ -28,7 +27,7 @@ const Profile = () => {
 
     useEffect(() => {
        dispatch(getProfile());
-    }, []);
+    }, [])
 
     return (
         <View style={styles.profile}>
@@ -107,12 +106,13 @@ const styles = StyleSheet.create({
         height:150,
         width:150,
         borderWidth:1,
+        borderColor:'#aaa',
         borderRadius:100,
         overflow:'hidden',
         position:'absolute',
         top:'-16%',
         left:'33%',
-        backgroundColor:'#c6cbef'
+        backgroundColor:'#fff'
     },
     profileTop:{
         marginTop:120,

@@ -127,9 +127,10 @@ export default function AddProperty() {
       </View>
 
       <Text style={styles.inputTitle}>Property Type</Text>
-<View style={styles.inputSelect}>
+{/* <View style={styles.inputSelect}> */}
 <RNPickerSelect
     value={propertyType}
+    style={pickerSelectStyles}
             onValueChange={value=> setPropertyType(value)}
             items={[
                 { label: 'House', value: 'House' },
@@ -140,7 +141,7 @@ export default function AddProperty() {
                 { label: 'Business', value: 'Business' },
             ]}
         />
-</View>
+{/* </View> */}
       <TextInput
         style={styles.inputField}
         placeholder="Title"
@@ -165,9 +166,10 @@ export default function AddProperty() {
         />
 
 <Text style={styles.inputTitle}>Area Unit</Text>
-<View style={styles.inputSelect}>
+{/* <View style={styles.inputSelect}> */}
 <RNPickerSelect
     value={areaUnit}
+    style={pickerSelectStyles}
             onValueChange={value=> setAreaUnit(value)}
             items={[
                 { label: 'Ropani', value: 'Ropani' },
@@ -180,7 +182,7 @@ export default function AddProperty() {
                 { label: 'Sq Mt', value: 'Sq Mt' },
             ]}
         />
-</View>
+{/* </View> */}
 
 <Text style={styles.inputTitle}>Direction</Text>
 <View style={styles.inputSelect}>
@@ -316,13 +318,13 @@ const styles = StyleSheet.create({
       padding:10
     },
     inputSelect: {
-      fontSize: 20,
-      backgroundColor:'#fff',
+      // fontSize: 20,
+      // backgroundColor:'#fff',
       borderWidth: 1,
       borderColor: '#de6262',
       borderRadius: 5,
-      color:'black',
-      marginBottom:15
+      // color:'black',
+      marginBottom:15,
     },
     imagePickerContainer:{
       flexDirection:'row', 
@@ -361,4 +363,27 @@ const styles = StyleSheet.create({
       padding:2
     }
 
-})
+});
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    fontSize: 16,
+    paddingVertical: 12,
+    paddingHorizontal: 10,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 4,
+    color: 'black',
+    paddingRight: 30, // to ensure the text is never behind the icon
+  },
+  inputAndroid: {
+    fontSize: 16,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    borderWidth: 0.5,
+    borderColor: 'purple',
+    borderRadius: 8,
+    color: 'black',
+    paddingRight: 30, // to ensure the text is never behind the icon
+  },
+});

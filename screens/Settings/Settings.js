@@ -97,10 +97,14 @@ const Settings = () => {
             </Button>
             }
 
+            <Button style={styles.Btn} onPress={()=> navigation.navigate('Edit Profile')}>
+                    <Text style={styles.btnText}>Edit Profile</Text>
+            </Button>
+
             <Button style={styles.Btn} onPress={()=> dispatch(logout())}>
                     <Text style={styles.btnText}>Log Out </Text>
             </Button>
-
+     
         </View>
     )
 }
