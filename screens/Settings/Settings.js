@@ -2,7 +2,8 @@ import React from 'react'
 import { StyleSheet,View, ActivityIndicator, Alert} from 'react-native'
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Button, Text} from 'react-native-paper';
+import Icons from 'react-native-vector-icons/AntDesign';
+import {Text} from 'react-native-paper';
 import {logout} from '../../store/action/auth';
 import {useDispatch, useSelector} from "react-redux";
 
@@ -85,25 +86,29 @@ const Settings = () => {
     return (
         <View style={styles.settings}>
 
-            <Button style={styles.Btn} onPress={()=> navigation.navigate('Change Password')}>
-                    <Text style={styles.btnText}>Change Password</Text>
-            </Button>
+        <View style={styles.btnContainer}>
+            <Icons name="arrowsalt" size={30} color="#de6262" />   
+            <Text style={styles.btnText} onPress={()=> navigation.navigate('Change Password')}>Change Password</Text>
+        </View>
 
             { isLoading ? 
           <ActivityIndicator size="large" color='#de6262' /> 
-          : 
-          <Button style={styles.Btn} onPress={removeAccount}>
-                    <Text style={styles.btnText}>Remove Account</Text>
-            </Button>
+          :         
+           <View style={styles.btnContainer}>
+                <Icons name="delete" size={30} color="#de6262" />
+                <Text style={styles.btnText} onPress={removeAccount}>Remove Account</Text>
+           </View>
             }
+            
+            <View style={styles.btnContainer}>
+                <Icons name="edit" size={30} color="#de6262" />
+                <Text style={styles.btnText} onPress={()=> navigation.navigate('Edit Profile')}>Edit Profile</Text>
+            </View>
 
-            <Button style={styles.Btn} onPress={()=> navigation.navigate('Edit Profile')}>
-                    <Text style={styles.btnText}>Edit Profile</Text>
-            </Button>
-
-            <Button style={styles.Btn} onPress={()=> dispatch(logout())}>
-                    <Text style={styles.btnText}>Log Out </Text>
-            </Button>
+            <View style={styles.btnContainer}>
+                <Icons name="logout" size={30} color="#de6262" />
+                <Text style={styles.btnText} onPress={()=> dispatch(logout())}>Log Out </Text>
+            </View>
      
         </View>
     )
@@ -117,20 +122,24 @@ const styles = StyleSheet.create({
         padding:20
 
     },
-    Btn:{
-        backgroundColor:'#fff',
+
+    btnContainer:{
+        flexDirection:'row',
+        // justifyContent:'center',
+        alignItems:'center',
+        marginBottom:20,
         borderWidth:1,
         borderColor:'#de6262',
-        borderRadius:7,
-        width:'100%',
-        marginBottom:20,
-        paddingVertical:3
-      },
+        borderRadius:5,
+        paddingHorizontal:40,
+        paddingVertical:8
 
+    },
       btnText:{
         color:'#de6262',
-        fontSize:15,
-        fontWeight:'bold'
+        fontSize:20,
+        fontWeight:'bold',
+        marginLeft:70
       }
    
 })

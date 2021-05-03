@@ -127,7 +127,7 @@ export default function AddProperty() {
       </View>
 
       <Text style={styles.inputTitle}>Property Type</Text>
-{/* <View style={styles.inputSelect}> */}
+<View style={styles.inputSelect}>
 <RNPickerSelect
     value={propertyType}
     style={pickerSelectStyles}
@@ -141,7 +141,7 @@ export default function AddProperty() {
                 { label: 'Business', value: 'Business' },
             ]}
         />
-{/* </View> */}
+</View>
       <TextInput
         style={styles.inputField}
         placeholder="Title"
@@ -166,7 +166,7 @@ export default function AddProperty() {
         />
 
 <Text style={styles.inputTitle}>Area Unit</Text>
-{/* <View style={styles.inputSelect}> */}
+<View style={styles.inputSelect}>
 <RNPickerSelect
     value={areaUnit}
     style={pickerSelectStyles}
@@ -182,12 +182,13 @@ export default function AddProperty() {
                 { label: 'Sq Mt', value: 'Sq Mt' },
             ]}
         />
-{/* </View> */}
+</View>
 
 <Text style={styles.inputTitle}>Direction</Text>
 <View style={styles.inputSelect}>
 <RNPickerSelect
     value={direction}
+    style={pickerSelectStyles}
             onValueChange={value=> setDirection(value)}
             items={[
                 { label: 'East', value: 'East' },

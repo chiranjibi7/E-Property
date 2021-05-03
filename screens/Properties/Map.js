@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { StyleSheet, Text, View,SafeAreaView } from 'react-native'
 import {useRoute} from '@react-navigation/native';
-import MapView, {Marker} from 'react-native-maps';
+import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
 
 const Map = () => {
   const route= useRoute();
@@ -12,6 +12,7 @@ const Map = () => {
       <View style={styles.container}>
         <MapView
           style={styles.mapStyle}
+          provider={PROVIDER_GOOGLE}
           initialRegion={{
             latitude: parseFloat(lat),
             longitude: parseFloat(long),

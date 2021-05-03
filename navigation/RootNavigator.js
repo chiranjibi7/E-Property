@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {Text} from 'react-native';
 import {useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
+import IconHouse from 'react-native-vector-icons/FontAwesome5';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
 import { HeaderBackButton } from '@react-navigation/stack';
 
@@ -87,7 +88,7 @@ const HomeTab=()=>{
             }} component={HomeNavigator} />
 
         <HomeTabNavigator.Screen name="Properties" options={{
-            tabBarIcon:({focused,color,size})=><Icon name="md-book" color={color} size={focused ? 30 : 25} />,
+            tabBarIcon:({focused,color,size})=><IconHouse name="laptop-house" color={color} size={focused ? 30 : 25} />,
             tabBarLabel:({focused,color,size})=><Text style={{color:color,fontSize:focused ? 13 :11}}>Properties</Text>
             }}   component={PropertiesNavigator} />
 

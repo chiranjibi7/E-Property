@@ -4,9 +4,9 @@ import {useNavigation} from '@react-navigation/native';
 import {useDispatch,useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import EditIcon from 'react-native-vector-icons/FontAwesome';
-import UserIcon from 'react-native-vector-icons/FontAwesome';
-import PhoneIcon from 'react-native-vector-icons/FontAwesome';
-import EmailIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import UserIcon from 'react-native-vector-icons/AntDesign';
+import PhoneIcon from 'react-native-vector-icons/AntDesign';
+import EmailIcon from 'react-native-vector-icons/AntDesign';
 import {getProfile} from '../../store/action/profile';
 
 const Profile = () => {
@@ -37,21 +37,23 @@ const Profile = () => {
             <View style={styles.profileInfo}>
                 <View style={styles.image}>
                     <Image 
-                    source={{uri: profile && profile.photoURL}} 
-                    height={150} width={150} style={{resizeMode:'cover'}} />
+                    style={{height:150,width:150}}
+                    source={{uri: profile && profile.photoURL }}
+                    resizeMode="cover"
+                    />
                 </View>
                 <View style={styles.profileTop}>
                     <View style={styles.profileTopInfo}>
-                    <UserIcon name="user" size={30} color="black" />
-                        <Text style={{fontSize:16,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.name}</Text>
+                    <UserIcon name="user" size={30} color="#de6262" />
+                        <Text style={{fontSize:18,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.name}</Text>
                     </View>
-                    <View style={{...styles.profileTopInfo,marginVertical:5}}>
-                    <EmailIcon name="email" size={30} color="black" />
-                        <Text style={{fontSize:16,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.email}</Text>
+                    <View style={{...styles.profileTopInfo,marginVertical:10}}>
+                    <EmailIcon name="mail" size={30} color="#de6262" />
+                        <Text style={{fontSize:18,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.email}</Text>
                     </View>
                     <View style={styles.profileTopInfo}>
-                        <PhoneIcon name="phone" size={30} color="black" />
-                        <Text style={{fontSize:16,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.phone}</Text>
+                        <PhoneIcon name="phone" size={30} color="#de6262" />
+                        <Text style={{fontSize:18,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.phone}</Text>
                     </View>
                     
                     
@@ -60,21 +62,21 @@ const Profile = () => {
                     <Text style={{backgroundColor:'#ddd',fontSize:20,fontWeight:'bold',padding:8,marginBottom:10}}>Address</Text>
                     <View style={styles.profileTopInfo}>
                         <Text style={{fontSize:18,fontWeight:'bold'}}>Country: </Text>
-                        <Text style={{fontSize:16,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.country}</Text>
+                        <Text style={{fontSize:18,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.country}</Text>
                     </View>
-                    <View style={styles.profileTopInfo}>
+                    <View style={{...styles.profileTopInfo,marginVertical:5}}>
                         <Text style={{fontSize:18,fontWeight:'bold'}}>State: </Text>
-                        <Text style={{fontSize:16, marginVertical:5,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.state}</Text>
+                        <Text style={{fontSize:18,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.state}</Text>
                     </View>
                     <View style={styles.profileTopInfo}>
                         <Text  style={{fontSize:18,fontWeight:'bold'}}>City: </Text>
-                        <Text style={{fontSize:16,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.city}</Text>
+                        <Text style={{fontSize:18,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.city}</Text>
                     </View>
-                    <View style={styles.profileTopInfo}>
+                    <View style={{...styles.profileTopInfo,marginVertical:5}}>
                         <Text  style={{fontSize:18,fontWeight:'bold'}}>Tole: </Text>
-                        <Text style={{fontSize:16, marginVertical:5,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.tole}</Text>
+                        <Text style={{fontSize:18,position:'absolute',left:120,fontWeight:'bold'}}>{profile && profile.tole}</Text>
                     </View>
-                
+
                 </View>
             </View>
         </View>
