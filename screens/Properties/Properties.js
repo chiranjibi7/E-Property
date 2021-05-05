@@ -67,7 +67,6 @@ const styles= StyleSheet.create({
     propertiesScreen:{
         flex:1,
         paddingHorizontal:10,
-        paddingTop:20,
         backgroundColor:'#eee'
     }
 });

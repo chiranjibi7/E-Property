@@ -2,9 +2,8 @@ import React, {useEffect} from 'react';
 import {Text} from 'react-native';
 import {useSelector} from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
-import IconHouse from 'react-native-vector-icons/FontAwesome5';
+import IconHouse from 'react-native-vector-icons/FontAwesome';
 import IconFontAwesome from 'react-native-vector-icons/FontAwesome';
-import { HeaderBackButton } from '@react-navigation/stack';
 
 import Login from '../screens/Auth/Login';
 import Signup from '../screens/Auth/Signup';
@@ -21,6 +20,7 @@ import CustomDrawerComponent from '../components/CustomDrawerComponent';
 import Settings from '../screens/Settings/Settings';
 import ChangePassword from '../screens/Settings/ChangePassword';
 import Properties from '../screens/Properties/Properties';
+import MyProperties from '../screens/My Properties/MyProperties';
 import PropertyDetail from '../screens/Properties/PropertyDetail';
 import Map from '../screens/Properties/Map';
 import AddProperty from '../screens/Add Property/AddProperty';
@@ -38,6 +38,7 @@ const HomeStackNavigator= createStackNavigator();
 const AddPropertyStackNavigator= createStackNavigator();
 const HomeTabNavigator= createBottomTabNavigator();
 const PropertiesStackNavigator= createStackNavigator();
+const MyPropertiesStackNavigator= createStackNavigator();
 const ProfileStackNavigator= createStackNavigator();
 const SettingsStackNavigator=createStackNavigator();
 
@@ -88,7 +89,7 @@ const HomeTab=()=>{
             }} component={HomeNavigator} />
 
         <HomeTabNavigator.Screen name="Properties" options={{
-            tabBarIcon:({focused,color,size})=><IconHouse name="laptop-house" color={color} size={focused ? 30 : 25} />,
+            tabBarIcon:({focused,color,size})=><IconHouse name="building" color={color} size={focused ? 30 : 25} />,
             tabBarLabel:({focused,color,size})=><Text style={{color:color,fontSize:focused ? 13 :11}}>Properties</Text>
             }}   component={PropertiesNavigator} />
 
@@ -96,6 +97,11 @@ const HomeTab=()=>{
             tabBarIcon:({focused,color,size})=><IconFontAwesome name="plus-circle" color={color} size={focused ? 30 : 25} />,
             tabBarLabel:({focused,color,size})=><Text style={{color:color,fontSize:focused ? 13 :11}}>Add</Text>
             }}   component={AddPropertyNavigator} />
+
+        <HomeTabNavigator.Screen name="My Properties" options={{
+            tabBarIcon:({focused,color,size})=><Icon name="list" color={color} size={focused ? 30 : 25} />,
+            tabBarLabel:({focused,color,size})=><Text style={{color:color,fontSize:focused ? 13 :11}}>My List</Text>
+            }}   component={MyPropertiesNavigator} />
 
         <HomeTabNavigator.Screen name="Settings" options={{
             tabBarIcon:({focused,color,size})=><Icon name="settings" color={color} size={focused ? 30 : 25} />,
@@ -130,6 +136,14 @@ const PropertiesNavigator=()=>{
         <PropertiesStackNavigator.Screen  name="Property Detail" component={PropertyDetail} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}}  />
         <PropertiesStackNavigator.Screen name="Map" component={Map} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}}  />
     </PropertiesStackNavigator.Navigator>
+}
+
+const MyPropertiesNavigator=()=>{ 
+  return  <MyPropertiesStackNavigator.Navigator>
+        <MyPropertiesStackNavigator.Screen name="My Properties" component={MyProperties} />
+        <MyPropertiesStackNavigator.Screen  name="Property Detail" component={PropertyDetail} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}}  />
+        <MyPropertiesStackNavigator.Screen name="Map" component={Map} options={{headerTitleAlign:'left', headerTintColor:'#fff', headerStyle:{backgroundColor:'#de6262'}}}  />
+    </MyPropertiesStackNavigator.Navigator>
 }
 
 const ProfileNavigator=()=>{
