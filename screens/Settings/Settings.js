@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet,View, ActivityIndicator, Alert} from 'react-native'
+import { StyleSheet, TouchableOpacity, View, ActivityIndicator, Alert} from 'react-native'
 import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Icons from 'react-native-vector-icons/AntDesign';
@@ -86,29 +86,37 @@ const Settings = () => {
     return (
         <View style={styles.settings}>
 
+        <TouchableOpacity activeOpacity={0.7} onPress={()=> navigation.navigate('Change Password')}>
         <View style={styles.btnContainer}>
             <Icons name="arrowsalt" size={30} color="#de6262" />   
-            <Text style={styles.btnText} onPress={()=> navigation.navigate('Change Password')}>Change Password</Text>
+            <Text style={styles.btnText} >Change Password</Text>
         </View>
+        </TouchableOpacity>
 
             { isLoading ? 
           <ActivityIndicator size="large" color='#de6262' /> 
           :         
-           <View style={styles.btnContainer}>
+         <TouchableOpacity activeOpacity={0.8} onPress={removeAccount}>
+               <View style={styles.btnContainer}>
                 <Icons name="delete" size={30} color="#de6262" />
-                <Text style={styles.btnText} onPress={removeAccount}>Remove Account</Text>
+                <Text style={styles.btnText} >Remove Account</Text>
            </View>
+         </TouchableOpacity>
             }
             
-            <View style={styles.btnContainer}>
+           <TouchableOpacity activeOpacity={0.8} onPress={()=> navigation.navigate('Edit Profile')}>
+           <View style={styles.btnContainer}>
                 <Icons name="edit" size={30} color="#de6262" />
-                <Text style={styles.btnText} onPress={()=> navigation.navigate('Edit Profile')}>Edit Profile</Text>
+                <Text style={styles.btnText}>Edit Profile</Text>
             </View>
+           </TouchableOpacity>
 
-            <View style={styles.btnContainer}>
+          <TouchableOpacity activeOpacity={0.8} onPress={()=> dispatch(logout())}>
+          <View style={styles.btnContainer}>
                 <Icons name="logout" size={30} color="#de6262" />
-                <Text style={styles.btnText} onPress={()=> dispatch(logout())}>Log Out </Text>
+                <Text style={styles.btnText}>Log Out </Text>
             </View>
+          </TouchableOpacity>
      
         </View>
     )
@@ -125,14 +133,14 @@ const styles = StyleSheet.create({
 
     btnContainer:{
         flexDirection:'row',
-        // justifyContent:'center',
         alignItems:'center',
         marginBottom:20,
         borderWidth:1,
         borderColor:'#de6262',
         borderRadius:5,
         paddingHorizontal:40,
-        paddingVertical:8
+        paddingVertical:5,
+        backgroundColor:'#fff'
 
     },
       btnText:{
